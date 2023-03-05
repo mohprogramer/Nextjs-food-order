@@ -3,6 +3,7 @@ import Banner from '../module/Banner'
 import Attributes from '../module/Attributes'
 import Definition from '../module/Definition'
 import Companies from '../module/Companies'
+import Instruction from '../module/Instructions'
 
 export default function HomePage() {
     return(
@@ -11,6 +12,7 @@ export default function HomePage() {
         <Attributes />
         <Definition />
         <Companies />
+        <Instruction />
         </div>
     )
 }
