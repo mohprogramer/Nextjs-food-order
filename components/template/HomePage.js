@@ -4,6 +4,8 @@ import Attributes from '../module/Attributes'
 import Definition from '../module/Definition'
 import Companies from '../module/Companies'
 import Instruction from '../module/Instructions'
+import Guide from '../module/Guide'
+import Restrictions from '../module/Restrictions'
 
 export default function HomePage() {
     return(
@@ -13,6 +15,8 @@ export default function HomePage() {
         <Definition />
         <Companies />
         <Instruction />
+        <Guide />
+        <Restrictions />
         </div>
     )
 }
