@@ -5,7 +5,7 @@ export default function Layout({children}) {
     return(
         <>
         <header className={styles.header}>
-            <div className='left'>
+            <div className={styles.left}>
                 <Link href="/">Botofood</Link>
             </div>
             <div className={styles.right}>
