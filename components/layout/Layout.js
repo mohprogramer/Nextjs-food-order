@@ -10,7 +10,7 @@ export default function Layout({children}) {
             </div>
             <div className={styles.right}>
                <Link href="/menu">Menu</Link>
-               <Link href="/categorie" >Categorie</Link>
+               <Link href="/categories" >Categorie</Link>
             </div>
         </header>
         <div className={styles.container}>
