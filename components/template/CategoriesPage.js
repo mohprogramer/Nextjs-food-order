@@ -1,23 +1,34 @@
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 import styles from './CategoriesPage.module.css'
 
 export default function CategoriesPage() {
+    const [query, setQuery] = useState({difficulty:"", time:""});
+    const router = useRouter();
+    const changeHandler = e => {
+        setQuery({...query, [e.target.name]: e.target.value})
+    }
+    const clickHandler = () => {
+        console.log(query);
+        router.push({pathname:'/categories', query})
+    }
     return(
        <div className={styles.container}>
         <h2>Categories</h2>
         <div className={styles.subContainer}>
             <div className={styles.select}>
-                <select>
-                    <option>Difficulty</option>
-                    <option>Easy</option>
-                    <option>Medium</option>
-                    <option>Hard</option>
+                <select value={query.difficulty} name="difficulty" onChange={changeHandler}>
+                    <option value="">Difficulty</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
                 </select>
-                <select>
-                    <option>Cooking time</option>
-                    <option>More than 30 min</option>
-                    <option>Less than 30 min</option>
+                <select value={query.time} name="time" onChange={changeHandler}>
+                    <option value="">Cooking time</option>
+                    <option value="more">More than 30 min</option>
+                    <option value="less">Less than 30 min</option>
                 </select>
-                <button>Search</button>
+                <button onClick={clickHandler}>Search</button>
             </div>
         </div>
        </div>
