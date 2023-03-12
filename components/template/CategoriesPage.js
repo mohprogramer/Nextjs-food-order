@@ -43,6 +43,8 @@ export default function CategoriesPage({data}) {
             </div>
         </div>
         <div className={styles.cards}>
+            {!data.length? <img src='/images/search.png' alt='search' /> : null}
+
             {
                 data.map(food => (<Card key={food.id} {...food} />))
             }
