@@ -9,7 +9,7 @@ export default function Categories({data}) {
 
 export async function getServerSideProps(context) {
     const {query:{difficulty, time}} = context;
-    const res = await fetch("http://localhost:4000/data");
+    const res = await fetch(`${process.env.BASE_URL}/data`);
     const json = await res.json();
 
     const data = json.filter(item => {
